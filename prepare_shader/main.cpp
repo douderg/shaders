@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
     source << "\n};\nsize_t " << target << "_size = " << std::dec << 4 * count << ";\n";
 
     std::fstream header(target + ".hpp", std::ios::out);
-    header << "#pragma once\n\n#include <cinttypes>\n\nalignas(sizeof(uint32_t)) uint32_t " << target << "_data[];\n"
+    header << "#pragma once\n\n#include <cinttypes>\n#include <cstddef>\n\nalignas(sizeof(uint32_t)) extern uint32_t " << target << "_data[];\n"
         << "extern size_t " << target << "_size;\n";
 
     return EXIT_SUCCESS;

@@ -13,6 +13,8 @@ function (add_shader TARGET_NAME SOURCE)
         DEPENDS
             ${SOURCE}
         COMMAND
+            ${CMAKE_COMMAND} -E make_directory ${CMAKE_BINARY_DIR}/${TARGET_NAME}
+        COMMAND
             ${SPIRV_COMPILER} --target-env=vulkan1.0 -o ${CMAKE_BINARY_DIR}/${TARGET_NAME}/${TARGET_NAME}.spv ${SOURCE}
     )
 
