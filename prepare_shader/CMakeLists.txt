@@ -36,6 +36,6 @@ function (add_shader TARGET_NAME SOURCE)
         PRIVATE 
             ${CMAKE_BINARY_DIR}/${TARGET_NAME}
     )
-
+    set_target_properties(${TARGET_NAME} PROPERTIES CXX_STANDARD 17)
     install (FILES ${CMAKE_BINARY_DIR}/${TARGET_NAME}/${TARGET_NAME}.hpp TYPE INCLUDE)
 endfunction()
