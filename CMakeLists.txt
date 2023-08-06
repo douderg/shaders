@@ -24,6 +24,9 @@ install (FILES
 	DESTINATION "lib/${PROJECT_NAME}-${PROJECT_VERSION}"
 )
 
+
+install (TARGETS prepare_shader RUNTIME DESTINATION bin)
+
 install (EXPORT ${PROJECT_NAME}-targets
 	DESTINATION "lib/${PROJECT_NAME}-${PROJECT_VERSION}" 
 )
