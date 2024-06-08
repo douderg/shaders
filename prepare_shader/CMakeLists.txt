@@ -33,8 +33,8 @@ function (add_shader TARGET_NAME SOURCE)
     target_include_directories (${TARGET_NAME} 
         INTERFACE 
             $<INSTALL_INTERFACE:include> 
-        PRIVATE 
-            ${CMAKE_BINARY_DIR}/${TARGET_NAME}
+        PUBLIC 
+            $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/${TARGET_NAME}>
     )
     set_target_properties(${TARGET_NAME} PROPERTIES CXX_STANDARD 17)
     install (FILES ${CMAKE_BINARY_DIR}/${TARGET_NAME}/${TARGET_NAME}.hpp TYPE INCLUDE)
